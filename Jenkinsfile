@@ -1,7 +1,7 @@
 pipeline{
     agent any
     tools {
-      maven 'maven3'
+      maven 'maven'
     }
     environment {
       DOCKER_TAG = getVersion()
@@ -9,8 +9,7 @@ pipeline{
     stages{
         stage('SCM'){
             steps{
-                git credentialsId: 'github', 
-                    url: 'https://github.com/javahometech/dockeransiblejenkins'
+                git branch: 'pushpa', url: 'https://github.com/Pushpalathasaparapu/dockeransiblejenkins'
             }
         }
         
